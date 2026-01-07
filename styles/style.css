@@ -2,23 +2,118 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-/*  background-image: var(--cover-image);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-color: var(--background-color);*/
   background: fixed var(--background-color) var(--cover-image) no-repeat center / cover;
 }
 
+/* ----- header ----- */
+
+.decorated-zone,
+.header {
+  display: grid;
+  min-height: 668px; /* 668px (figms) or 667px (iPhone SE) */
+  grid-template-columns: 1;
+  grid-template-rows: 1fr min-content 1fr;
+  font: 400 18px / 25px 'IBM Plex Mono';
+  color: var(--color);
+  background-color: transparent;
+  padding: var(--padding);
+  margin-bottom: var(--header-margin-bottom);
+}
+
+.header_lamp {
+  display: var(--status);
+  position: absolute;
+  right: var(--padding);
+  top: var(--padding);
+}
+
+.header_lamp::after {
+  content: "";
+  display: inline-block;
+  background-color: var(--color);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin: 8px;
+  box-shadow: 0 0 5px 0 var(--color);
+}
+
 .header__theme-menu {
-  font: 400 18px / 18px 'IBM Plex Mono';
-  text-align: center; /* from figma WTF? */
+  align-self: center;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+
+}
+
+.header__theme-menu-item {
+
+}
+
+.header__theme-menu-button {
+  line-height: 18px;
+  background-color: transparent;
+  border: none;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--color);
 }
 
 .logo_title {
-  color: #DB00FF;
-  text-shadow: 4px 4px #FF0070;
-  font: 700 116px / 96px 'IBM Plex Mono'; /* line-height: 83%; */
+  color: var(--color-logo);
+  text-shadow: 4px 4px var(-accent-color);
+  font: 700 116px / 96px 'IBM Plex Mono'; /* line-height: 83%; figma */
+}
+
+.header_title {
+  width: clamp(355px, 50%, 984px);
+  align-self: center;
+  justify-self: end;
+  background-color: var(--background-color-title);
+}
+
+.title-text {
+  font: 700 18px / 1.3em 'IBM Plex Mono';
+  color: var(--color-title);
+}
+
+/* ----- main ----- */
+
+.main {}
+.section {
+  display: grid;
+  padding: var(--padding);
+}
+
+.section_title {
+  font: 700 18px / 1.3em 'IBM Plex Mono';
+  color: var(--background-color-title);
+}
+
+.article {}
+
+.article_title {
+  font: 700 18px / 1.3em 'IBM Plex Mono';
+  color: var(--color-title);
+  background-color: var(--background-color-title);
+
+}
+
+.article_text {
+  font: 400 18px / 1.3em 'IBM Plex Mono';
+  color: var(--color-text);
+  background-color: var(--background-color);
+}
+
+.article_text_link {
+  text-shadow: 2px 1px var(-accent-color);
+}
+
+.article_subtitle {}
+
+img {
+  width: 100%;
 }
 

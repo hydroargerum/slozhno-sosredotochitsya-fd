@@ -6,8 +6,18 @@
 
 :root.theme-light {
   --cover-image: url("../images/cover-image-light.png");
-  --color: #FF0070;
-  --background-color: white;
+
+  --color: #353430;
+  --background-color: #F1B2CE; /* ??? */
+
+  --color-logo: #FFC2E6;
+  --color-shadow: #FF8DCB;
+
+  --color-title: #353430;
+  --background-color-title: #FF8DCB;
+
+  --color-text: #353430;
+
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя

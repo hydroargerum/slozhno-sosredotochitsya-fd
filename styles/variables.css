@@ -5,5 +5,21 @@
 
 :root {
   --cover-image: url("../images/cover-image.png");
-  --background-color: indigo;
+
+  --color: #FF0070;
+  --background-color: #000028;
+
+  --color-logo: #DB00FF;
+  --color-shadow: #FF0070;
+
+  --color-title: #000028;
+  --background-color-title: #FF0070;
+
+  --color-text: #F1B2CE;
+
+  --status: none; /* lamp */
+
+  --padding: clamp(10px, 0.4581px + 2.54453vw, 20px); /* for padding & gap */
+  --header-margin-bottom: clamp(40px, 20.9168px + 5.0891vw, 60px);
+  --section-margin-bottom: clamp(40px, 20.9168px + 5.0891vw, 60px);
 }
