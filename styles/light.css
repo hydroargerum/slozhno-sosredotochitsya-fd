@@ -8,10 +8,10 @@
   --cover-image: url("../images/cover-image-light.png");
 
   --color: #353430;
-  --background-color: #F1B2CE; /* ??? */
+  --background-color: #fff1f7; /* ??? */
 
   --color-logo: #FFC2E6;
-  --color-shadow: #FF8DCB;
+  --accent-color: #FF8DCB;
 
   --color-title: #353430;
   --background-color-title: #FF8DCB;

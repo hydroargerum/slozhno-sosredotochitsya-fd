@@ -11,14 +11,14 @@
   --background-color: #000028;
 
   --color-logo: #DB00FF;
-  --color-shadow: #FF0070;
+  --accent-color: #FF0070;
 
   --color-title: #000028;
   --background-color-title: #FF0070;
 
   --color-text: #F1B2CE;
 
-  --status: inline-block;
+  --poweroff: inline-block;
 
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
