@@ -3,31 +3,34 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background: fixed var(--background-color) var(--cover-image) no-repeat center / cover;
+  font: 700 18px / 1.3 'IBM Plex Mono', monospace; /* in figma line-height: 23.4px or 1.3rem */
+  color: var(--color);
 }
 
 /* ----- header ----- */
 
 .decorated-zone,
 .header {
+  position: relative;
   display: grid;
-  min-height: var(--height-logo); /* 668px (figma) or 667px (iPhone SE) */
+  min-height: 668px;
+  height: 100vh;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr min-content 1fr;
-  font: 400 18px / 25px 'IBM Plex Mono', monospace;
-  color: var(--color);
-  background-color: transparent;
   padding: var(--padding);
   margin-bottom: var(--header-margin-bottom);
 }
 
-.header_lamp {
+.header-lamp { /* REC */
   display: var(--poweroff);
   position: absolute;
   right: calc(var(--padding) + 28px);
   top: var(--padding);
+  font-weight: 400;
+  line-height: 25px; /*  1.3889 */
 }
 
-.header_lamp::after {
+.header-lamp::after { /* лампочка */
   content: "";
   position: absolute;
   transform: translate(10px, 8px);
@@ -39,18 +42,18 @@
   outline: 1px solid var(--color);
 }
 
-.corner-top-right {
+.corner-top-right { /* уголки */
   position: absolute;
   display: block;
   top: var(--padding);
-  right: calc(var(--padding) + 25px);
+  right: calc(var(--padding) + var(--corner-size));
 }
 
 .corner-top-right::after {
   content: "";
   position: absolute;
-  width: 25px;
-  height: 25px;
+  width: var(--corner-size);
+  height: var(--corner-size);
   border-top: 1px solid var(--color);
   border-right: 1px solid var(--color);
 }
@@ -58,22 +61,21 @@
 .corner-bottom-left {
   position: absolute;
   display: block;
-  bottom: calc(var(--padding) + 25px);
+  bottom: calc(var(--padding) + var(--corner-size));
   left: var(--padding);
 }
 
 .corner-bottom-left::after {
   content: "";
   position: absolute;
-  width: 25px;
-  height: 25px;
+  width: var(--corner-size);
+  height: var(--corner-size);
   border-left: 1px solid var(--color);
   border-bottom: 1px solid var(--color);
 }
 
-.header__theme-menu {
-  align-self: center;
-  justify-self: end;
+.header__theme-menu { /* меню тем */
+  place-self: center end;
 }
 
 .header__theme-menu-list {
@@ -94,24 +96,24 @@
 
 .header__theme-menu-button_active {
   border-color: var(--color);
+  pointer-events: none;
 }
 
-.logo_title {
-  color: var(--color-logo);
+.logo-title {
+  color: var(--logo-color);
   text-shadow: 4px 4px var(--accent-color);
   font: 700 var(--logo-size)/0.825 'IBM Plex Mono'; /* line-height: 83%; figma */
 }
 
-.header_title {
-  width: clamp(355px, 50%, 984px);
-  align-self: center;
-  justify-self: end;
+.header-title {
+  width: clamp(355px, 50%, 700px);
+  place-self: center end;
   background-color: var(--background-color-title);
 }
 
 .title-text {
-  font: 700 18px / 23px 'IBM Plex Mono'; /* in figma line-height: 23.4px or 1.3rem */
-  color: var(--color-title);
+  font: 700 18px / 23px 'IBM Plex Mono'; 
+  color: var(--title-color);
 }
 
 /* ----- main ----- */
@@ -128,7 +130,7 @@
   margin-bottom: var(--section-margin-bottom);
 }
 
-.section_title {
+.section-title {
   font: 700 18px / 1.3em 'IBM Plex Mono';
   color: var(--background-color-title);
 }
@@ -139,25 +141,31 @@
   gap: 10px;
 }
 
-.article_title {
+.article-title {
   font: 700 18px / 1.3em 'IBM Plex Mono';
-  color: var(--color-title);
+  color: var(--title-color);
   background-color: var(--background-color-title);
 }
 
-.article_text {
+.article-text {
   font: 400 18px / 1.3em 'IBM Plex Mono';
   color: var(--color-text);
   background-color: var(--background-color);
 }
 
-.article_text_link {
-  text-shadow: 2px 1px var(-accent-color);
+.article-text-link {
+  text-shadow: 2px 2px var(--accent-color);
+  text-decoration: none;
 }
 
-.article_subtitle {
+.article-text-link:hover {
+  border-bottom: 1px solid var(--color-text);
+}
+
+
+.article-subtitle {
   font: 400 18px / 1.3em 'IBM Plex Mono';
-  color: var(--color-title);
+  color: var(--title-color);
   background-color: var(--background-color-title);
 }
 
@@ -167,9 +175,22 @@
   margin-bottom: var(--header-margin-bottom);
 }
 
+/* ----- footer ----- */
+
+.footer {
+  position: relative;
+  min-height: 668px;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
 @media (width >= 768px) {
-  /* clamp(236px, -1px + 30.8594vw, 315px); /* 1st columns */
-  /* clamp(226px, -39.5px + 34.5703vw, 314.5px); /* 2-3 columns */
+  .logo-header {
+    position: relative;
+    left: -20px;
+  }
+
   section {
     grid-template-columns: clamp(236px, -1px + 30.8594vw, 315px) repeat(2, clamp(226px, -39.5px + 34.5703vw, 314.5px));
   }
@@ -186,19 +207,14 @@
     grid-template-rows: repeat(6, min-content);
   }
 
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, min-content);
-  }
-
   /* title of sections */
-  .why .section_title,
-  .solutions .section_title {
+  .why .section-title,
+  .solutions .section-title {
     grid-column: 1;
     grid-row: 1 / -1;
   }
 
-  .reasons .section_title {
+  .reasons .section-title {
     grid-column: 1;
     grid-row: 1;
   }
@@ -213,7 +229,14 @@
     grid-column: 1 / -1;
   }
 
-  .gallery .article_title { /* title */
+  /* gallery */
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, min-content);
+  }
+
+  .gallery .article-title {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
   }
@@ -245,6 +268,19 @@
 }
 
 @media (width >= 1024px) {
+  .header__theme-menu {
+    place-self: start center;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    gap: 10px;
+  }
+
+  section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .reasons {
     grid-template-rows: repeat(2, min-content);
   }
@@ -253,19 +289,4 @@
     grid-row: 2;
     grid-column: auto;
   }
-}
-
-/* ----- footer ----- */
-
-.footer {
-  display: grid;
-  min-height: 667px;
-  font: 400 18px / 25px 'IBM Plex Mono';
-  color: var(--color);
-  padding: var(--padding);
-}
-
-.logo_footer {
-  align-self: center;
-  justify-self: center;
 }

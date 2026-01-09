@@ -4,32 +4,37 @@
 */
 
 :root {
-  --cover-image: url("../images/cover-image.png");
+  /* properties of color-schemes */
+  --cover-image: url("../images/cover-image-dark.png");
 
-  --color: #FF0070;
+  --color: #FF0070; /* main color */
   --background-color: #000028;
 
-  --color-logo: #DB00FF;
+  --logo-color: #DB00FF;
   --accent-color: #FF0070;
 
-  --color-title: #000028;
+  --color-section-title: #000028;
+  --color-article-title: #000028;
   --background-color-title: #FF0070;
 
   --color-text: #F1B2CE;
 
-  --poweroff: none; /* lamp */
+  --color-hover-button: #660045;
 
+  --poweroff: inline-block; /* lamp on/off */
+
+  /* size properties */
   --padding: clamp(10px, 0.4581px + 2.54453vw, 20px); /* for padding & gap */
-  --header-margin-bottom: clamp(40px, 20.9168px + 5.0891vw, 60px);
-  --section-margin-bottom: clamp(50px, 21.3744px + 7.6336vw, 80px);
+  --padding-minus: clamp(-20px, 19.0832px + -5.0891vw, 0);
+  --header-margin-bottom: clamp(40px, 20.9168px + 5.0891vw, 60px); /* margin for header */
+  --section-margin-bottom: clamp(50px, 21.3744px + 7.6336vw, 80px); /* margin for section */
 
-  --logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /* Для мобильных */
-  --height-logo: clamp(668px, 328.3056px + 90.5852vw, 1024px); /* Для мобильных */
+  --logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /* font-size for logo on mobile-device */
+  --corner-size: 25px; /* размер уголков */
 }
 
 @media (width > 768px) {
   :root {
-    --logo-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); /* Для планшета и десктопа */
-    --height-logo: clamp(768px, 1268.2752px - 65.1399vw, 1024px); /* Для планшета и десктопа */
+    --logo-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); /* font-size for logo on tablet or desktop */
   }
 }

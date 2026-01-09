@@ -7,16 +7,18 @@
 :root.theme-dark {
   --cover-image: url("../images/cover-image-dark.png");
 
-  --color: #FF0070;
+  --color: #FF0070; /* main color */
   --background-color: #000028;
 
-  --color-logo: #DB00FF;
+  --logo-color: #DB00FF;
   --accent-color: #FF0070;
 
-  --color-title: #000028;
+  --title-color: #000028;
   --background-color-title: #FF0070;
 
   --color-text: #F1B2CE;
+
+  --color-hover-button: #660045;
 
   --poweroff: inline-block;
 
