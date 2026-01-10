@@ -7,20 +7,22 @@
 :root.theme-light {
   --cover-image: url("../images/cover-image-light.png");
 
-  --color: #353430;
+  --color: #353430; /* main color */
   --background-color: #FFF1F7;
 
   --logo-color: #FFC2E6;
   --accent-color: #FF8DCB;
 
-  --title-color: #353430;
+
+  --color-section-title: #353430;
+  --color-article-title: #353430;
   --background-color-title: #FF8DCB;
 
   --color-text: #353430;
 
   --color-hover-button: #ADA5A6;
 
-  --poweroff: none;
+  --poweroff: none; /* lamp on/off */
 
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
@@ -30,22 +32,24 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-  --cover-image: url("../images/cover-image-light.png");
+    --cover-image: url("../images/cover-image-light.png");
 
-  --color: #353430;
-  --background-color: #FFF1F7;
+    --color: #353430; /* main color */
+    --background-color: #FFF1F7;
 
-  --logo-color: #FFC2E6;
-  --accent-color: #FF8DCB;
+    --logo-color: #FFC2E6;
+    --accent-color: #FF8DCB;
 
-  --title-color: #353430;
-  --background-color-title: #FF8DCB;
 
-  --color-text: #353430;
+    --color-section-title: #353430;
+    --color-article-title: #353430;
+    --background-color-title: #FF8DCB;
 
-  --color-hover-button: #ADA5A6;
+    --color-text: #353430;
 
-  --poweroff: none;
+    --color-hover-button: #ADA5A6;
+
+    --poweroff: none; /* lamp on/off */
   }
 
   /* Остальные стили, только при необходимости */

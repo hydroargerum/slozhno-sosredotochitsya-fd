@@ -1,2 +1,7 @@
 .gitignore
-/figma
+figma/
+node_modules/
+package.json
+package-lock.json 
+.prettierrc
+stylelint.config.js

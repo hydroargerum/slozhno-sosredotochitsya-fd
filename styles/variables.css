@@ -19,22 +19,24 @@
 
   --color-text: #F1B2CE;
 
-  --color-hover-button: #660045;
+  --color-hover-button: #ADA5A6;
 
   --poweroff: inline-block; /* lamp on/off */
 
   /* size properties */
   --padding: clamp(10px, 0.4581px + 2.54453vw, 20px); /* for padding & gap */
-  --padding-minus: clamp(-20px, 19.0832px + -5.0891vw, 0);
-  --header-margin-bottom: clamp(40px, 20.9168px + 5.0891vw, 60px); /* margin for header */
-  --section-margin-bottom: clamp(50px, 21.3744px + 7.6336vw, 80px); /* margin for section */
-
   --logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /* font-size for logo on mobile-device */
-  --corner-size: 25px; /* размер уголков */
+  --corner-size: 25px; /* size of corners */
+  --header-margin-bottom: clamp(40px, 20.9168px + 5.0891vw, 60px); /* margin for header */
+  --header-title-size: clamp(355px, 50%, 700px);
+
+  --section-margin-bottom: clamp(50px, 21.3744px + 7.6336vw, 80px); /* margin for section */
 }
 
-@media (width > 768px) {
+@media (width >= 768px) {
   :root {
     --logo-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); /* font-size for logo on tablet or desktop */
+    --section-title-column: clamp(236px, -1px + 30.8594vw, 315px);
+    --article-columns: clamp(226px, -39.5px + 34.5703vw, 314.5px);
   }
 }

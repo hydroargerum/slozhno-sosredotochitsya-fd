@@ -3,7 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background: fixed var(--background-color) var(--cover-image) no-repeat center / cover;
-  font: 700 18px / 1.3 'IBM Plex Mono', monospace; /* in figma line-height: 23.4px or 1.3rem */
+  font: 700 18px / 1.3 'IBM Plex Mono', monospace;
   color: var(--color);
 }
 
@@ -11,11 +11,9 @@
 
 .decorated-zone,
 .header {
-  position: relative;
   display: grid;
   min-height: 668px;
   height: 100vh;
-  grid-template-columns: 1fr;
   grid-template-rows: 1fr min-content 1fr;
   padding: var(--padding);
   margin-bottom: var(--header-margin-bottom);
@@ -27,7 +25,7 @@
   right: calc(var(--padding) + 28px);
   top: var(--padding);
   font-weight: 400;
-  line-height: 25px; /*  1.3889 */
+  line-height: 1.3889;
 }
 
 .header-lamp::after { /* лампочка */
@@ -36,15 +34,14 @@
   transform: translate(10px, 8px);
   width: 9px;
   height: 9px;
-  background-color: var(--color);
+  background-color: currentColor;
   border-radius: 50%;
-  box-shadow: 0 0 3px 3px var(--color);
-  outline: 1px solid var(--color);
+  box-shadow: 0 0 3px 3px currentColor;
+  outline: 1px solid currentColor;
 }
 
 .corner-top-right { /* уголки */
   position: absolute;
-  display: block;
   top: var(--padding);
   right: calc(var(--padding) + var(--corner-size));
 }
@@ -54,13 +51,12 @@
   position: absolute;
   width: var(--corner-size);
   height: var(--corner-size);
-  border-top: 1px solid var(--color);
-  border-right: 1px solid var(--color);
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
 }
 
 .corner-bottom-left {
   position: absolute;
-  display: block;
   bottom: calc(var(--padding) + var(--corner-size));
   left: var(--padding);
 }
@@ -70,8 +66,8 @@
   position: absolute;
   width: var(--corner-size);
   height: var(--corner-size);
-  border-left: 1px solid var(--color);
-  border-bottom: 1px solid var(--color);
+  border-left: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
 }
 
 .header__theme-menu { /* меню тем */
@@ -83,37 +79,43 @@
   gap: 10px;
 }
 
-.header__theme-menu-item {
-
-}
+/* .header__theme-menu-item {} */
 
 .header__theme-menu-button {
   inline-size: 70px;
-  line-height: 24px;
+  line-height: 1.3333;
   background-color: transparent;
   border: 1px solid transparent;
 }
 
+.header__theme-menu-button:hover {
+  border-color: var(--color-hover-button);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid currentColor;
+}
+
 .header__theme-menu-button_active {
-  border-color: var(--color);
+  border-color: currentColor;
   pointer-events: none;
 }
 
 .logo-title {
   color: var(--logo-color);
+  font-size: var(--logo-size);
+  line-height: 0.825;
   text-shadow: 4px 4px var(--accent-color);
-  font: 700 var(--logo-size)/0.825 'IBM Plex Mono'; /* line-height: 83%; figma */
 }
 
 .header-title {
-  width: clamp(355px, 50%, 700px);
+  width: var(--header-title-size);
   place-self: center end;
-  background-color: var(--background-color-title);
 }
 
 .title-text {
-  font: 700 18px / 23px 'IBM Plex Mono'; 
-  color: var(--title-color);
+  color: var(--color-article-title);
+  background-color: var(--background-color-title);
 }
 
 /* ----- main ----- */
@@ -130,27 +132,15 @@
   margin-bottom: var(--section-margin-bottom);
 }
 
-.section-title {
-  font: 700 18px / 1.3em 'IBM Plex Mono';
-  color: var(--background-color-title);
-}
-
 .article {
   display: grid;
   grid-template-rows: min-content;
   gap: 10px;
 }
 
-.article-title {
-  font: 700 18px / 1.3em 'IBM Plex Mono';
-  color: var(--title-color);
-  background-color: var(--background-color-title);
-}
-
 .article-text {
-  font: 400 18px / 1.3em 'IBM Plex Mono';
+  font-weight: 400;
   color: var(--color-text);
-  background-color: var(--background-color);
 }
 
 .article-text-link {
@@ -159,14 +149,15 @@
 }
 
 .article-text-link:hover {
-  border-bottom: 1px solid var(--color-text);
+  text-decoration: underline;
 }
 
+.article-text-link:focus-visible {
+  outline: 1px solid var(--color-text);
+}
 
 .article-subtitle {
-  font: 400 18px / 1.3em 'IBM Plex Mono';
-  color: var(--title-color);
-  background-color: var(--background-color-title);
+  font-weight: 400;
 }
 
 .gallery {
@@ -192,7 +183,7 @@
   }
 
   section {
-    grid-template-columns: clamp(236px, -1px + 30.8594vw, 315px) repeat(2, clamp(226px, -39.5px + 34.5703vw, 314.5px));
+    grid-template-columns: var(--section-title-column) repeat(2, var(--article-columns));
   }
 
   .why {
@@ -208,13 +199,13 @@
   }
 
   /* title of sections */
-  .why .section-title,
-  .solutions .section-title {
+  .why h2,
+  .solutions h2 {
     grid-column: 1;
     grid-row: 1 / -1;
   }
 
-  .reasons .section-title {
+  .reasons h2 {
     grid-column: 1;
     grid-row: 1;
   }
@@ -230,13 +221,12 @@
   }
 
   /* gallery */
-
   .gallery {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, min-content);
   }
 
-  .gallery .article-title {
+  .gallery .title-text {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
   }
@@ -274,7 +264,6 @@
 
   .header__theme-menu-list {
     display: flex;
-    gap: 10px;
   }
 
   section {
