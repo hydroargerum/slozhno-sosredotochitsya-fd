@@ -13,14 +13,15 @@
   --logo-color: #DB00FF;
   --accent-color: #FF0070;
 
-  --title-color: #000028;
+  --color-section-title: #000028;
+  --color-article-title: #000028;
   --background-color-title: #FF0070;
 
   --color-text: #F1B2CE;
 
-  --color-hover-button: #660045;
+  --color-hover-button: #ADA5A6;
 
-  --poweroff: inline-block;
+  --poweroff: inline-block; /* lamp on/off */
 
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
