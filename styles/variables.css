@@ -1,8 +1,3 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
-
 :root {
   /* properties of color-schemes */
   --cover-image: url("../images/cover-image-dark.png");
@@ -13,24 +8,23 @@
   --logo-color: #DB00FF;
   --accent-color: #FF0070;
 
-  --color-section-title: #000028;
   --color-article-title: #000028;
   --background-color-title: #FF0070;
 
   --color-text: #F1B2CE;
 
-  --color-hover-button: #ADA5A6;
-
+  --color-hover-button: rgba(255, 0, 112, 0.4);
+  
   --poweroff: inline-block; /* lamp on/off */
 
   /* size properties */
   --padding: clamp(10px, 0.4581px + 2.54453vw, 20px); /* for padding & gap */
   --logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /* font-size for logo on mobile-device */
   --corner-size: 25px; /* size of corners */
-  --header-margin-bottom: clamp(40px, 20.9168px + 5.0891vw, 60px); /* margin for header */
+  --header-margin-block-end: clamp(40px, 20.9168px + 5.0891vw, 60px); /* margin for header */
   --header-title-size: clamp(355px, 50%, 700px);
 
-  --section-margin-bottom: clamp(50px, 21.3744px + 7.6336vw, 80px); /* margin for section */
+  --section-margin-block-end: clamp(50px, 21.3744px + 7.6336vw, 80px); /* margin for section */
 }
 
 @media (width >= 768px) {
